@@ -4,6 +4,12 @@ Responsive landing page developed from a Figma design as part of my frontend dev
 
 The project follows a **mobile-first approach** and reproduces the supplied designs for mobile, tablet and desktop, including responsive layouts and interactive hover states.
 
+## Live Demo
+
+🌐 [View Live Demo](https://neusgil.github.io/proyecto6-elearnig-landing-page-responsive/)
+
+The live version allows you to explore the responsive layout and interactive hover states across desktop, tablet and mobile.
+
 ## Features
 
 - Responsive design
