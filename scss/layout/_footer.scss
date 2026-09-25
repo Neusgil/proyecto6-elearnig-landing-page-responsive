@@ -1,0 +1,97 @@
+@use "../utils/variables" as v;
+@use "../utils/mixins" as m;
+
+// ======================================================
+// FOOTER - MOBILE
+// ======================================================
+
+.footer {
+  height: 120px;
+  background: v.$color-navy;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: calc(100% - 32px);
+    max-width: 343px;
+    height: 100%;
+
+    margin: 0 auto;
+  }
+
+  // ==============================
+  // LOGO
+  // ==============================
+
+  &__logo {
+    display: block;
+    flex-shrink: 0;
+
+    img {
+      display: block;
+      width: 89px;
+      height: auto;
+    }
+  }
+}
+
+// ======================================================
+// FOOTER - TABLET
+// ======================================================
+
+@include m.tablet {
+  .footer {
+    &__container {
+      width: 689px;
+      max-width: none;
+    }
+  }
+}
+
+// ======================================================
+// FOOTER - DESKTOP
+// ======================================================
+
+@include m.desktop {
+  .footer {
+    width: 100%;
+    height: 120px;
+
+    &__container {
+      width: 1110px;
+      max-width: none;
+    }
+
+    // ==============================
+    // LOGO
+    // Figma: 111.17 × 27.68px
+    // ==============================
+
+    &__logo {
+      img {
+        width: 111.17px;
+        height: 27.68px;
+      }
+    }
+
+    // ==============================
+    // BUTTON
+    // Figma: 167 × 56px
+    // ==============================
+
+    .button--footer {
+      width: 167px;
+      min-width: 167px;
+      height: 56px;
+      padding: 0;
+
+      border-radius: 28px;
+
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+  }
+}

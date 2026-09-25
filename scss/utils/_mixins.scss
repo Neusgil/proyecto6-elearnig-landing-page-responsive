@@ -1,0 +1,25 @@
+@use "variables" as v;
+
+// ======================================================
+// RESPONSIVE - MOBILE FIRST
+// ======================================================
+
+// ==============================
+// TABLET
+// ==============================
+
+@mixin tablet {
+  @media (min-width: v.$breakpoint-tablet) {
+    @content;
+  }
+}
+
+// ==============================
+// DESKTOP
+// ==============================
+
+@mixin desktop {
+  @media (min-width: v.$breakpoint-desktop) {
+    @content;
+  }
+}

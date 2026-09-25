@@ -1,0 +1,371 @@
+@use "../utils/variables" as v;
+@use "../utils/mixins" as m;
+
+// ======================================================
+// COURSES - MOBILE
+// ======================================================
+
+.courses {
+  padding: 0 16px 80px;
+
+  background: linear-gradient(180deg, #ffffff 0%, #f0f1ff 100%);
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    width: 100%;
+    max-width: 343px;
+    margin: 0 auto;
+  }
+}
+
+// ======================================================
+// COURSE CARD - MOBILE
+// ======================================================
+
+.course-card {
+  position: relative;
+
+  width: 100%;
+  height: 259px;
+  padding: 56px 28px 32px;
+
+  border-radius: 10px;
+  background: v.$color-white;
+  box-shadow: 0 25px 50px rgba(6, 22, 141, 0.0442);
+
+  // ==============================
+  // ICON
+  // ==============================
+
+  &__icon {
+    position: absolute;
+    top: -24px;
+    left: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 56px;
+    height: 56px;
+
+    border-radius: 50%;
+    background: v.$gradient-primary;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  // ==============================
+  // TITLE
+  // ==============================
+
+  &__title {
+    margin: 0 0 16px;
+
+    color: v.$color-navy;
+
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 25px;
+  }
+
+  // ==============================
+  // DESCRIPTION
+  // ==============================
+
+  &__description {
+    margin: 0 0 24px;
+
+    color: v.$color-grey;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+  }
+
+  // ==============================
+  // LINK
+  // ==============================
+
+  &__link {
+    color: v.$color-pink;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+  }
+
+  // ==============================
+  // FEATURED CARD
+  // ==============================
+
+  &--featured {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 120px;
+    padding: 24px 28px;
+
+    border-radius: 10px;
+    background: v.$gradient-primary;
+    box-shadow: none;
+
+    h2 {
+      margin: 0;
+
+      color: v.$color-white;
+
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 32px;
+    }
+  }
+}
+
+// ======================================================
+// COURSES - TABLET
+// ======================================================
+
+@include m.tablet {
+  .courses {
+    margin-top: 187px;
+    padding: 0 39px 86px;
+
+    &__container {
+      grid-template-columns: 339px 339px;
+      column-gap: 11px;
+      row-gap: 32px;
+
+      width: 689px;
+      max-width: none;
+    }
+  }
+
+  .course-card {
+    width: 339px;
+    height: 283px;
+
+    padding-left: 32px;
+    padding-right: 21px;
+
+    background: transparent;
+    box-shadow: none;
+
+    // ==============================
+    // CARD BACKGROUND
+    // ==============================
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      z-index: 0;
+      top: 24px;
+      left: 0;
+
+      width: 100%;
+      height: 259px;
+
+      border-radius: 10px;
+      background: v.$color-white;
+      box-shadow: 0 25px 50px rgba(6, 22, 141, 0.0442);
+    }
+
+    // ==============================
+    // ICON
+    // ==============================
+
+    &__icon {
+      z-index: 2;
+      top: 0;
+      left: 32px;
+    }
+
+    // ==============================
+    // CONTENT
+    // ==============================
+
+    &__content {
+      position: relative;
+      z-index: 1;
+    }
+
+    &__title {
+      margin-top: 24px;
+    }
+
+    &__link {
+      display: block;
+      margin-top: 24px;
+    }
+
+    // ==============================
+    // FEATURED CARD
+    // ==============================
+
+    &--featured {
+      width: 339px;
+      height: 259px;
+
+      margin-top: 24px;
+
+      background: v.$gradient-primary;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+// ======================================================
+// COURSES - DESKTOP
+// ======================================================
+
+@include m.desktop {
+  .courses {
+    // Hero bottom: 611px
+    // Courses start: 837px
+    // Distance: 226px
+    margin-top: 226px;
+    padding: 0 0 140px;
+
+    &__container {
+      grid-template-columns: repeat(3, 350px);
+      column-gap: 30px;
+      row-gap: 56px;
+
+      width: 1110px;
+      max-width: none;
+    }
+  }
+
+  .course-card {
+    width: 350px;
+    height: 346px;
+    padding: 0;
+
+    // ==============================
+    // CARD BACKGROUND
+    // Figma: 350 × 322
+    // ==============================
+
+    &::before {
+      top: 24px;
+      left: 0;
+
+      width: 350px;
+      height: 322px;
+
+      border-radius: 15px;
+    }
+
+    // ==============================
+    // ICON
+    // ==============================
+
+    &__icon {
+      top: 0;
+      left: 32px;
+
+      width: 56px;
+      height: 56px;
+    }
+
+    // ==============================
+    // CONTENT
+    // ==============================
+
+    &__content {
+      position: absolute;
+      z-index: 1;
+
+      top: 78px;
+      left: 32px;
+
+      width: 286px;
+      height: 218px;
+    }
+
+    // ==============================
+    // TITLE
+    // ==============================
+
+    &__title {
+      margin: 0;
+
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 30px;
+    }
+
+    // ==============================
+    // DESCRIPTION
+    // ==============================
+
+    &__description {
+      width: 286px;
+      margin: 24px 0 0;
+
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 28px;
+    }
+
+    // ==============================
+    // LINK
+    // Fixed position keeps all
+    // "Get Started" links aligned
+    // ==============================
+
+    &__link {
+      color: v.$color-pink;
+
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 28px;
+
+      &:hover {
+        color: v.$color-pink-light;
+      }
+    }
+
+    // ==============================
+    // FEATURED CARD
+    // Figma: 350 × 322
+    // ==============================
+
+    &--featured {
+      display: block;
+
+      width: 350px;
+      height: 322px;
+
+      margin-top: 24px;
+      padding: 64px 32px 0;
+
+      border-radius: 15px;
+      background: v.$gradient-primary;
+
+      &::before {
+        display: none;
+      }
+
+      h2 {
+        width: 286px;
+        margin: 0;
+
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 40px;
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@use "../utils/variables" as v;
+
+// ==============================
+// BUTTONS - BASE / MOBILE
+// ==============================
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 140px;
+  height: 48px;
+  padding: 0 24px;
+
+  border-radius: 28px;
+
+  color: v.$color-white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+
+  // ============================
+  // DARK
+  // Header button
+  // ============================
+
+  &--dark {
+    background: v.$color-navy;
+
+    &:hover {
+      background: v.$color-blue-light;
+    }
+  }
+
+  // ============================
+  // PRIMARY
+  // Hero button
+  // ============================
+
+  &--primary {
+    background: v.$gradient-primary;
+
+    &:hover {
+      background: linear-gradient(
+          rgba(255, 255, 255, 0.5),
+          rgba(255, 255, 255, 0.5)
+        ),
+        v.$gradient-primary;
+    }
+  }
+
+  // ============================
+  // FOOTER
+  // ============================
+
+  &--footer {
+    width: 140px;
+    min-width: 140px;
+    height: 48px;
+    padding: 0;
+
+    background: v.$gradient-secondary;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28px;
+
+    &:hover {
+      background: linear-gradient(
+          rgba(255, 255, 255, 0.5),
+          rgba(255, 255, 255, 0.5)
+        ),
+        v.$gradient-secondary;
+    }
+  }
+}

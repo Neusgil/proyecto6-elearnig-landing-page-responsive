@@ -1,0 +1,481 @@
+@use "../utils/variables" as v;
+@use "../utils/mixins" as m;
+
+// ======================================================
+// HERO - MOBILE
+// ======================================================
+
+.hero {
+  padding: 38px 16px 0;
+
+  // ==============================
+  // CONTENT
+  // ==============================
+
+  &__content {
+    width: 100%;
+    max-width: 343px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin: 0 0 26px;
+
+    color: v.$color-navy;
+
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  &__description {
+    margin: 0 0 24px;
+
+    color: v.$color-grey;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+  }
+
+  &__content .button--primary {
+    width: 167px;
+    height: 56px;
+  }
+
+  // ==============================
+  // VISUAL
+  // Figma: Group 9 = 327 × 301
+  // ==============================
+
+  &__visual {
+    position: relative;
+
+    width: 327px;
+    height: 301px;
+    margin: 47px auto 66px;
+  }
+
+  // ==============================
+  // CIRCLE
+  // Figma: 253 × 253
+  // ==============================
+
+  &__circle {
+    position: absolute;
+    top: 24px;
+    left: 37px;
+
+    width: 253px;
+    height: 253px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+    background: v.$gradient-primary;
+  }
+
+  // ==============================
+  // WOMAN
+  // ==============================
+
+  &__image {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+
+    width: 239px;
+    max-width: none;
+    height: auto;
+
+    transform: translateX(-50%);
+  }
+
+  // ==============================
+  // STAT CARDS
+  // ==============================
+
+  &__stat {
+    position: absolute;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-radius: 10px;
+    background: v.$color-white;
+    box-shadow: 0 20px 40px rgba(6, 22, 141, 0.12);
+
+    span {
+      margin-bottom: 2px;
+
+      color: v.$color-grey;
+
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    strong {
+      color: v.$color-navy;
+
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    // Members
+    // Figma: 105 × 100
+
+    &--members {
+      top: 0;
+      right: 0;
+
+      width: 105px;
+      height: 100px;
+      padding-left: 20px;
+    }
+
+    // Course hours
+    // Figma: 155 × 100
+
+    &--hours {
+      bottom: 0;
+      left: 0;
+
+      width: 155px;
+      height: 100px;
+      padding-left: 20px;
+    }
+  }
+}
+
+// ======================================================
+// HERO - TABLET
+// ======================================================
+
+@include m.tablet {
+  .hero {
+    position: relative;
+
+    padding: 99px 40px 0;
+
+    // ==============================
+    // CONTENT
+    // ==============================
+
+    &__content {
+      max-width: 398px;
+      margin: 0;
+    }
+
+    &__title {
+      width: 326px;
+      margin-bottom: 25px;
+
+      font-size: 40px;
+      line-height: 1.25;
+    }
+
+    &__description {
+      width: 398px;
+      margin-bottom: 24px;
+    }
+
+    &__content .button--primary {
+      width: 167px;
+      height: 56px;
+    }
+
+    // ==============================
+    // VISUAL
+    // ==============================
+
+    &__visual {
+      position: absolute;
+      top: 0;
+      left: 425px;
+
+      width: 640px;
+      height: 640px;
+      margin: 0;
+
+      // Diagonal gradient band
+
+      &::before {
+        content: "";
+
+        position: absolute;
+        z-index: 0;
+
+        top: -188.41px;
+        left: 212.45px;
+
+        width: 216.54px;
+        height: 688.56px;
+
+        border-radius: 158.5px;
+        background: v.$gradient-secondary;
+
+        transform: rotate(45deg);
+      }
+    }
+
+    // ==============================
+    // WOMAN CAPSULE
+    // ==============================
+
+    &__circle {
+      z-index: 1;
+
+      top: 49.77px;
+      left: 45.31px;
+
+      width: 216.54px;
+      height: 382.53px;
+
+      border-radius: 158.5px;
+    }
+
+    &__image {
+      left: auto;
+      right: 0;
+      bottom: 0;
+
+      width: 238.72px;
+      max-width: none;
+      height: 329.93px;
+
+      object-fit: contain;
+      transform: none;
+    }
+
+    // ==============================
+    // STAT CARDS
+    // ==============================
+
+    &__stat {
+      z-index: 2;
+    }
+
+    &__stat--members {
+      top: 36px;
+      left: 208px;
+      right: auto;
+    }
+
+    &__stat--hours {
+      top: 370px;
+      bottom: auto;
+      left: 0;
+    }
+  }
+}
+
+// ======================================================
+// HERO - DESKTOP
+// ======================================================
+
+@include m.desktop {
+  .hero {
+    position: relative;
+
+    padding: 172px 0 0;
+
+    // ==============================
+    // CONTENT
+    // ==============================
+
+    &__content {
+      position: relative;
+      z-index: 5;
+
+      width: 457px;
+      max-width: none;
+      margin-left: 165px;
+    }
+
+    &__title {
+      width: 457px;
+      margin-bottom: 29px;
+
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 71.5px;
+    }
+
+    &__description {
+      width: 445px;
+      margin-bottom: 40px;
+
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 28px;
+    }
+
+    &__content .button--primary {
+      width: 167px;
+      height: 63px;
+
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+
+    // ==============================
+    // VISUAL
+    // ==============================
+
+    &__visual {
+      position: absolute;
+      z-index: 1;
+
+      top: 0;
+      left: 0;
+
+      width: 1440px;
+      height: 937px;
+      margin: 0;
+
+      // Diagonal gradient band
+
+      &::before {
+        content: "";
+
+        position: absolute;
+
+        top: -261.68px;
+        left: 1148.68px;
+
+        width: 317px;
+        height: 1008px;
+
+        border-radius: 158.5px;
+        background: v.$gradient-secondary;
+
+        transform: rotate(45deg);
+        transform-origin: center;
+
+        pointer-events: none;
+      }
+    }
+
+    // ==============================
+    // WOMAN CAPSULE
+    // ==============================
+
+    &__circle {
+      position: absolute;
+      z-index: 1;
+
+      top: 87px;
+      left: 904px;
+
+      width: 317px;
+      height: 560px;
+
+      overflow: hidden;
+
+      border-radius: 158.5px;
+      background: v.$gradient-primary;
+    }
+
+    // ==============================
+    // WOMAN
+    // ==============================
+
+    &__image {
+      position: absolute;
+
+      top: 77px;
+      left: -32.74px;
+      right: auto;
+      bottom: auto;
+
+      width: 349.47px;
+      height: 483px;
+      max-width: none;
+
+      object-fit: contain;
+      transform: none;
+    }
+
+    // ==============================
+    // STAT CARDS - DESKTOP
+    // ==============================
+
+    &__stat {
+      z-index: 3;
+
+      opacity: 0;
+      visibility: hidden;
+
+      pointer-events: none;
+
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+
+      span {
+        margin-bottom: 0;
+
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 28px;
+      }
+
+      strong {
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 40px;
+      }
+    }
+
+    // Members
+    // Figma Desktop: 155 × 120
+    // Página: x = 1184 / y = 270
+    // Hero comienza en y = 80 -> top = 190
+
+    &__stat--members {
+      top: 190px;
+      left: 1184px;
+      right: auto;
+      bottom: auto;
+
+      width: 155px;
+      height: 120px;
+
+      padding-left: 24px;
+    }
+
+    // Course hours
+    // Figma Desktop: 199 × 120
+    // Página: x = 784 / y = 509
+    // Hero comienza en y = 80 -> top = 429
+
+    &__stat--hours {
+      top: 429px;
+      left: 784px;
+      right: auto;
+      bottom: auto;
+
+      width: 199px;
+      height: 120px;
+
+      padding-left: 24px;
+    }
+
+    // ==============================
+    // STAT CARDS - HOVER
+    // ==============================
+
+    // Al pasar por encima de la mujer aparecen
+    // las dos tarjetas informativas.
+    // No son elementos clicables.
+
+    &__circle:hover ~ &__stat--members,
+    &__circle:hover ~ &__stat--hours {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

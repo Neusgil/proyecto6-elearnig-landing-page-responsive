@@ -1,0 +1,91 @@
+@use "../utils/mixins" as m;
+
+// ======================================================
+// HEADER - MOBILE
+// ======================================================
+
+.header {
+  padding: 16px 16px 0;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1110px;
+    margin: 0 auto;
+  }
+
+  // ==============================
+  // LOGO
+  // ==============================
+
+  &__logo {
+    display: block;
+    flex-shrink: 0;
+
+    img {
+      display: block;
+      width: 89px;
+      height: auto;
+    }
+  }
+}
+
+// ======================================================
+// HEADER - TABLET
+// ======================================================
+
+@include m.tablet {
+  .header {
+    padding: 24px 40px 0;
+
+    &__container {
+      max-width: 688px;
+    }
+  }
+}
+
+// ======================================================
+// HEADER - DESKTOP
+// ======================================================
+
+@include m.desktop {
+  .header {
+    padding: 24px 0 0;
+
+    &__container {
+      width: 1110px;
+      max-width: none;
+      margin: 0 auto;
+    }
+
+    // ==============================
+    // LOGO
+    // ==============================
+
+    &__logo {
+      img {
+        width: 111.17px;
+        height: 27.68px;
+      }
+    }
+
+    // ==============================
+    // BUTTON
+    // Figma: 167 × 56px
+    // ==============================
+
+    .button--dark {
+      width: 167px;
+      min-width: 167px;
+      height: 56px;
+
+      padding: 0;
+
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+  }
+}

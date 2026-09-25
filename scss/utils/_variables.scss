@@ -1,0 +1,27 @@
+// ======================================================
+// BREAKPOINTS - MOBILE FIRST
+// ======================================================
+
+// Mobile = estilos base (sin media query)
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1200px;
+
+// ======================================================
+// COLORS
+// ======================================================
+
+$color-blue-light: #666ca3;
+$color-navy: #13183f;
+$color-grey: #83869a;
+$color-pink: #f74780;
+$color-pink-light: #ffa7c3;
+$color-white: #ffffff;
+
+// ======================================================
+// GRADIENTS
+// ======================================================
+
+$gradient-primary: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+
+$gradient-secondary: linear-gradient(180deg, #4851ff 0%, #f02aa6 100%);
